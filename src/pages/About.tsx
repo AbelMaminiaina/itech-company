@@ -67,12 +67,9 @@ const About = () => {
   ]
 
   const milestones = [
-    { year: '2019', event: 'Création d\'iTech-Company' },
-    { year: '2020', event: 'Premier client international' },
-    { year: '2021', event: '20 projets livrés avec succès' },
-    { year: '2022', event: 'Expansion de l\'équipe à 10 personnes' },
-    { year: '2023', event: 'Certification ISO 9001' },
-    { year: '2024', event: '50+ projets et 30+ clients satisfaits' },
+    { year: '2025', event: 'Création d\'iTech-Company à Madagascar' },
+    { year: '2025', event: '5 entreprises accompagnées avec succès' },
+    { year: '2025', event: 'Partenariats avec Ghrades et Build Company' },
   ]
 
   return (
@@ -106,18 +103,18 @@ const About = () => {
           >
             <h2 className="text-4xl font-bold mb-6">Notre Histoire</h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Fondée en 2019, iTech-Company est née de la passion de créer des expériences numériques
+              Fondée en 2025, iTech-Company est née de la passion de créer des expériences numériques
               exceptionnelles. Notre équipe de développeurs et designers talentueux partage une vision
               commune : transformer les idées innovantes en solutions digitales performantes.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Au fil des années, nous avons accompagné des dizaines d'entreprises dans leur transformation
-              digitale, des startups ambitieuses aux grandes entreprises établies. Chaque projet est une
-              opportunité de repousser les limites de la technologie et du design.
+              Au fil des mois, nous avons accompagné 5 entreprises dans leur transformation
+              digitale. Chaque projet est une opportunité de repousser les limites de la technologie
+              et du design, tout en répondant aux besoins spécifiques du marché malgache.
             </p>
             <p className="text-gray-600 dark:text-gray-400">
-              Aujourd'hui, nous sommes fiers d'être reconnus comme un partenaire de confiance pour des
-              projets web, mobile et cloud de haute qualité.
+              Basés à Madagascar, nous sommes fiers de contribuer au développement de l'écosystème
+              digital local en offrant des solutions web, mobile et cloud de haute qualité.
             </p>
           </motion.div>
 
@@ -129,28 +126,28 @@ const About = () => {
           >
             <div className="space-y-4">
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=300&fit=crop"
-                alt="Team collaboration"
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=300&fit=crop"
+                alt="Équipe iTech-Company Madagascar"
                 className="rounded-xl w-full h-48 object-cover"
                 loading="lazy"
               />
               <img
-                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=300&fit=crop"
-                alt="Office workspace"
+                src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=300&fit=crop"
+                alt="Bureau Antananarivo"
                 className="rounded-xl w-full h-64 object-cover"
                 loading="lazy"
               />
             </div>
             <div className="space-y-4 pt-8">
               <img
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=300&fit=crop"
-                alt="Team meeting"
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop"
+                alt="Développeurs malgaches"
                 className="rounded-xl w-full h-64 object-cover"
                 loading="lazy"
               />
               <img
-                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=300&fit=crop"
-                alt="Modern office"
+                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=300&fit=crop"
+                alt="Équipe collaboration"
                 className="rounded-xl w-full h-48 object-cover"
                 loading="lazy"
               />

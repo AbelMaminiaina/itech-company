@@ -144,26 +144,53 @@ const Home = () => {
             </motion.div>
 
             {/* Partners */}
-            <motion.div
-              className="flex flex-wrap justify-center items-center gap-12 mt-20"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              {[
-                { name: 'Ghrades', logo: 'https://via.placeholder.com/150x60/0070f3/ffffff?text=Ghrades' },
-                { name: 'Build Company', logo: 'https://via.placeholder.com/150x60/0070f3/ffffff?text=Build+Co' },
-              ].map((partner, index) => (
-                <div key={index} className="flex items-center justify-center">
-                  <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    className="h-12 md:h-16 object-contain opacity-70 hover:opacity-100 transition-opacity"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </motion.div>
+            <div className="mt-20">
+              <motion.p
+                className="text-center text-gray-600 dark:text-gray-400 mb-6"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                Nos partenaires de confiance
+              </motion.p>
+              <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                {[
+                  { name: 'Ghrades' },
+                  { name: 'Build Company' },
+                ].map((partner, index) => (
+                  <motion.div
+                    key={index}
+                    className="text-center"
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{
+                      duration: 0.6,
+                      delay: 0.4 + index * 0.2,
+                      ease: "easeOut"
+                    }}
+                    whileHover={{
+                      scale: 1.1,
+                      transition: { duration: 0.2 }
+                    }}
+                  >
+                    <motion.h3
+                      className="text-2xl md:text-4xl font-bold font-display text-gradient"
+                      animate={{
+                        opacity: [0.7, 1, 0.7],
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: index * 0.5
+                      }}
+                    >
+                      {partner.name}
+                    </motion.h3>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
