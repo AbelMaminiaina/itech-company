@@ -1,0 +1,16 @@
+# Robots.txt pour iTech-Company
+# https://itech-company.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://itech-company.com/sitemap.xml
+
+# Crawl-delay (optionnel, en secondes)
+Crawl-delay: 1
+
+# Bloquer l'indexation de fichiers sensibles (si nécessaire)
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /config/

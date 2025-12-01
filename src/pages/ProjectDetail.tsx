@@ -4,6 +4,7 @@ import { ArrowLeft, ExternalLink, Calendar, User } from 'lucide-react'
 import { projects } from './Portfolio'
 import Button from '../components/ui/Button'
 import SectionWrapper from '../components/ui/SectionWrapper'
+import SEO from '../components/SEO'
 
 const ProjectDetail = () => {
   const { id } = useParams()
@@ -26,6 +27,14 @@ const ProjectDetail = () => {
 
   return (
     <div className="pt-20">
+      <SEO
+        title={project.title}
+        description={project.description}
+        keywords={`${project.title}, ${project.category}, ${project.stack.join(', ')}, projet iTech-Company`}
+        url={`/portfolio/${project.id}`}
+        image={project.image}
+      />
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-dark-900 dark:via-dark-800 dark:to-dark-900 py-20">
         <div className="container-custom">

@@ -5,6 +5,8 @@ import Button from '../components/ui/Button'
 import Card from '../components/ui/Card'
 import SectionWrapper from '../components/ui/SectionWrapper'
 import TestimonialSlider from '../components/ui/TestimonialSlider'
+import SEO from '../components/SEO'
+import StructuredData from '../components/StructuredData'
 
 const Home = () => {
   const services = [
@@ -84,6 +86,15 @@ const Home = () => {
 
   return (
     <div className="overflow-hidden">
+      <SEO
+        title="iTech-Company"
+        description="Nous créons des expériences numériques à fort impact. Agence web spécialisée en développement web, mobile, UI/UX design et IA à Madagascar et en France."
+        keywords="agence web Madagascar, agence web France, développement web Antananarivo, développement web Paris, développement mobile, UI/UX design, DevOps, IA, automatisation, iTech-Company"
+        url="/"
+      />
+      <StructuredData type="Organization" />
+      <StructuredData type="WebSite" />
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-dark-900 dark:via-dark-800 dark:to-dark-900 pt-20">
         {/* Animated background elements */}

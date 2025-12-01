@@ -3,6 +3,7 @@ import { Calendar, User, ArrowRight } from 'lucide-react'
 import SectionWrapper from '../components/ui/SectionWrapper'
 import Card from '../components/ui/Card'
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 
 const Blog = () => {
   const articles = [
@@ -72,6 +73,13 @@ const Blog = () => {
 
   return (
     <div className="pt-20">
+      <SEO
+        title="Blog"
+        description="Découvrez nos articles sur le développement web, mobile, design UI/UX, DevOps, IA et sécurité. Conseils et tendances tech par les experts d'iTech-Company à Madagascar et en France."
+        keywords="blog développement web, articles tech, tendances développement, tutoriels web, blog tech Madagascar, blog tech France"
+        url="/blog"
+      />
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-dark-900 dark:via-dark-800 dark:to-dark-900 py-20 md:py-32">
         <div className="container-custom">

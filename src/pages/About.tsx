@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Target, Eye, Award, Users, Rocket } from 'lucide-react'
 import SectionWrapper from '../components/ui/SectionWrapper'
 import Card from '../components/ui/Card'
+import SEO from '../components/SEO'
 
 const About = () => {
   const values = [
@@ -56,6 +57,13 @@ const About = () => {
 
   return (
     <div className="pt-20">
+      <SEO
+        title="À propos d'iTech-Company"
+        description="Découvrez l'histoire d'iTech-Company, agence digitale fondée en 2025 à Madagascar avec une présence en France. Notre mission : transformer les idées innovantes en solutions digitales performantes."
+        keywords="iTech-Company Madagascar, iTech-Company France, agence digitale Antananarivo, agence digitale Paris, équipe développeurs, transformation digitale, histoire entreprise"
+        url="/about"
+      />
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-dark-900 dark:via-dark-800 dark:to-dark-900 py-20 md:py-32">
         <div className="container-custom">

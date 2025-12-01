@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import Card from '../components/ui/Card'
 import SectionWrapper from '../components/ui/SectionWrapper'
+import SEO from '../components/SEO'
 
 export const projects = [
   {
@@ -71,6 +72,13 @@ const Portfolio = () => {
 
   return (
     <div className="pt-20">
+      <SEO
+        title="Portfolio"
+        description="Découvrez nos projets de développement web, mobile et design. Des solutions innovantes créées par iTech-Company pour des clients à Madagascar, en France et à l'international."
+        keywords="portfolio développement web, projets web Madagascar, projets web France, réalisations iTech-Company, applications mobiles, sites web professionnels"
+        url="/portfolio"
+      />
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-dark-900 dark:via-dark-800 dark:to-dark-900 py-20 md:py-32">
         <div className="container-custom">

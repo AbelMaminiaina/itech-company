@@ -4,6 +4,7 @@ import { Mail, Send } from 'lucide-react'
 import SectionWrapper from '../components/ui/SectionWrapper'
 import Card from '../components/ui/Card'
 import Button from '../components/ui/Button'
+import SEO from '../components/SEO'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -56,6 +57,13 @@ const Contact = () => {
 
   return (
     <div className="pt-20">
+      <SEO
+        title="Contactez-nous"
+        description="Contactez iTech-Company pour discuter de votre projet digital. Notre équipe à Madagascar et en France est prête à transformer vos idées en réalité. Email: contact@itech-company.com"
+        keywords="contact iTech-Company, devis développement web, contact agence Madagascar, contact agence France, projet digital, consultation gratuite"
+        url="/contact"
+      />
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-dark-900 dark:via-dark-800 dark:to-dark-900 py-20 md:py-32">
         <div className="container-custom">

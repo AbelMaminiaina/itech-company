@@ -3,6 +3,7 @@ import { Clock, Briefcase, ArrowRight } from 'lucide-react'
 import SectionWrapper from '../components/ui/SectionWrapper'
 import Card from '../components/ui/Card'
 import Button from '../components/ui/Button'
+import SEO from '../components/SEO'
 
 const Recrutement = () => {
   const jobs = [
@@ -86,6 +87,12 @@ const Recrutement = () => {
 
   return (
     <div className="pt-20">
+      <SEO
+        title="Recrutement"
+        description="Rejoignez l'équipe iTech-Company à Madagascar et en France ! Nous recherchons des développeurs Odoo, WordPress et consultants Systeme.io & Zapier. Postulez maintenant."
+        keywords="recrutement développeur Madagascar, recrutement développeur France, emploi tech Antananarivo, emploi tech Paris, développeur Odoo, développeur WordPress, consultant Systeme.io, carrière développement web"
+        url="/recrutement"
+      />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-dark-900 dark:via-dark-800 dark:to-dark-900 py-20 md:py-32">
         <div className="container-custom">

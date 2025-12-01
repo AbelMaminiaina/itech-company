@@ -1,0 +1,28 @@
+{
+  "name": "iTech-Company - Expériences numériques à fort impact",
+  "short_name": "iTech-Company",
+  "description": "Agence web spécialisée en développement web, mobile, UI/UX design et IA à Madagascar",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0070f3",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "business",
+    "productivity",
+    "technology"
+  ],
+  "lang": "fr",
+  "dir": "ltr",
+  "scope": "/",
+  "related_applications": [],
+  "prefer_related_applications": false
+}

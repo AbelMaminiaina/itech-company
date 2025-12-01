@@ -4,6 +4,8 @@ import SectionWrapper from '../components/ui/SectionWrapper'
 import Card from '../components/ui/Card'
 import Button from '../components/ui/Button'
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
+import StructuredData from '../components/StructuredData'
 
 const Services = () => {
   const services = [
@@ -95,6 +97,21 @@ const Services = () => {
 
   return (
     <div className="pt-20">
+      <SEO
+        title="Nos Services"
+        description="Découvrez nos services de développement web, mobile, UI/UX design, DevOps, IA et intégration API. Solutions sur mesure pour votre transformation digitale à Madagascar et en France."
+        keywords="développement web Madagascar, développement web France, développement web Paris, développement mobile, UI/UX design, DevOps, cloud, IA, automatisation, API, services digitaux"
+        url="/services"
+      />
+      <StructuredData
+        type="Service"
+        data={{
+          name: 'Services de développement web et mobile',
+          description: 'Solutions complètes de développement web, mobile, design et cloud',
+          serviceType: 'Développement Web et Mobile'
+        }}
+      />
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-dark-900 dark:via-dark-800 dark:to-dark-900 py-20 md:py-32">
         <div className="container-custom">

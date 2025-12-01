@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import { HelmetProvider } from 'react-helmet-async'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import Home from './pages/Home'
@@ -30,24 +31,26 @@ function App() {
   }
 
   return (
-    <Router>
-      <div className="min-h-screen bg-white dark:bg-dark-900 transition-colors duration-300">
-        <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/portfolio/:id" element={<ProjectDetail />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/recrutement" element={<Recrutement />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <div className="min-h-screen bg-white dark:bg-dark-900 transition-colors duration-300">
+          <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/portfolio/:id" element={<ProjectDetail />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/recrutement" element={<Recrutement />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </HelmetProvider>
   )
 }
 
