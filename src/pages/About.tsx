@@ -29,40 +29,22 @@ const About = () => {
 
   const team = [
     {
-      name: 'Alexandre Dupont',
+      name: 'RAZANADRASOA Hanitra',
       role: 'CEO & Founder',
-      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Alexandre',
-      bio: '10+ ans d\'expérience en développement web',
+      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Hanitra',
+      bio: 'Visionnaire et leader de l\'équipe iTech-Company',
     },
     {
-      name: 'Sophie Bernard',
-      role: 'Lead Designer',
-      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sophie',
-      bio: 'Experte en UI/UX et branding',
+      name: 'RABETSIMIALONA Abel',
+      role: 'Tech Lead/Developer .Net',
+      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Abel',
+      bio: 'Expert .Net et architecture logicielle',
     },
     {
-      name: 'Marc Laurent',
-      role: 'CTO',
-      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Marc',
-      bio: 'Architecte logiciel et DevOps expert',
-    },
-    {
-      name: 'Julie Martin',
-      role: 'Project Manager',
-      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Julie',
-      bio: 'Gestion de projets agiles',
-    },
-    {
-      name: 'Thomas Petit',
-      role: 'Full Stack Developer',
-      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Thomas',
-      bio: 'Spécialiste React et Node.js',
-    },
-    {
-      name: 'Emma Rousseau',
-      role: 'Mobile Developer',
-      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Emma',
-      bio: 'Experte React Native et Flutter',
+      name: 'RABEMANANTSOA Fandresena',
+      role: 'Community Manager',
+      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Fandresena',
+      bio: 'Gestion des réseaux sociaux et communication',
     },
   ]
 
