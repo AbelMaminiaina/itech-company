@@ -11,7 +11,12 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
     '@type': 'Organization',
     name: 'iTech-Company',
     url: 'https://itech-company.com',
-    logo: 'https://itech-company.com/logo.svg',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://itech-company.com/logo-512.png',
+      width: 512,
+      height: 512,
+    },
     description: 'Agence web spécialisée en développement web, mobile, UI/UX design et IA à Madagascar',
     address: {
       '@type': 'PostalAddress',
