@@ -1,14 +1,23 @@
 import { motion } from 'framer-motion'
 import { useParams, Link } from 'react-router-dom'
+import { useEffect } from 'react'
 import { ArrowLeft, ExternalLink, Calendar, User } from 'lucide-react'
 import { projects } from './Portfolio'
 import Button from '../components/ui/Button'
 import SectionWrapper from '../components/ui/SectionWrapper'
 import SEO from '../components/SEO'
+import { trackProjectView } from '../utils/analytics'
 
 const ProjectDetail = () => {
   const { id } = useParams()
   const project = projects.find((p) => p.id === Number(id))
+
+  // Tracker la vue du projet
+  useEffect(() => {
+    if (project) {
+      trackProjectView(project.id.toString())
+    }
+  }, [project])
 
   if (!project) {
     return (

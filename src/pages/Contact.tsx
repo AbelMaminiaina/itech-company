@@ -5,6 +5,7 @@ import SectionWrapper from '../components/ui/SectionWrapper'
 import Card from '../components/ui/Card'
 import Button from '../components/ui/Button'
 import SEO from '../components/SEO'
+import { trackContactFormSubmit } from '../utils/analytics'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -28,6 +29,9 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+
+    // Tracker la soumission du formulaire
+    trackContactFormSubmit()
 
     // Simulate API call
     setTimeout(() => {
