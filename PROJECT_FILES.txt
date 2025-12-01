@@ -1,0 +1,88 @@
+# iTech-Company - Liste Complète des Fichiers
+
+## 📁 Structure Complète
+
+itech-company/
+│
+├── 📄 Configuration & Build
+│   ├── package.json              - Dépendances et scripts
+│   ├── package-lock.json         - Lock des versions
+│   ├── tsconfig.json             - Config TypeScript
+│   ├── tsconfig.node.json        - Config TS Node
+│   ├── vite.config.ts            - Config Vite
+│   ├── tailwind.config.js        - Config Tailwind CSS
+│   ├── postcss.config.js         - Config PostCSS
+│   ├── .eslintrc.cjs             - Config ESLint
+│   └── .gitignore                - Fichiers ignorés
+│
+├── 📄 Documentation (7 fichiers)
+│   ├── README.md                 - Documentation principale
+│   ├── QUICKSTART.md             - Guide rapide
+│   ├── PROJECT_STRUCTURE.md      - Architecture détaillée
+│   ├── FEATURES.md               - Liste des fonctionnalités
+│   ├── TREE.md                   - Arborescence visuelle
+│   ├── DEPLOYMENT.md             - Guide de déploiement
+│   └── SUMMARY.md                - Résumé du projet
+│
+├── 📄 HTML
+│   └── index.html                - Template HTML principal
+│
+├── 📁 public/
+│   └── vite.svg                  - Logo Vite
+│
+├── 📁 src/
+│   │
+│   ├── 📄 Main Files
+│   │   ├── main.tsx              - Point d'entrée React
+│   │   ├── App.tsx               - Router principal
+│   │   ├── index.css             - Styles Tailwind + custom
+│   │   └── vite-env.d.ts         - Types Vite
+│   │
+│   ├── 📁 components/
+│   │   │
+│   │   ├── 📁 layout/
+│   │   │   ├── Navbar.tsx        - Navigation sticky + menu mobile
+│   │   │   └── Footer.tsx        - Footer complet
+│   │   │
+│   │   └── 📁 ui/
+│   │       ├── Button.tsx        - Bouton avec variantes
+│   │       ├── Card.tsx          - Card avec glassmorphism
+│   │       ├── SectionWrapper.tsx - Wrapper de section
+│   │       └── TestimonialSlider.tsx - Slider témoignages
+│   │
+│   └── 📁 pages/
+│       ├── Home.tsx              - Page d'accueil
+│       ├── Services.tsx          - Page services
+│       ├── Portfolio.tsx         - Grille de projets
+│       ├── ProjectDetail.tsx     - Détail projet
+│       ├── About.tsx             - À propos
+│       └── Contact.tsx           - Contact avec formulaire
+│
+└── 📁 dist/                      - Build production (généré)
+    ├── index.html
+    └── assets/
+        ├── index-[hash].css
+        └── index-[hash].js
+
+## 📊 Comptage
+
+TOTAL FICHIERS SOURCE : 15 TypeScript/TSX
+- Pages : 6
+- Components UI : 4
+- Components Layout : 2
+- Core files : 3
+
+TOTAL DOCUMENTATION : 7 fichiers Markdown
+
+TOTAL CONFIGURATION : 9 fichiers
+
+## 🎯 Fichiers Clés à Personnaliser
+
+1. src/pages/Home.tsx          - Contenu accueil
+2. src/pages/Portfolio.tsx     - Vos projets
+3. src/pages/Contact.tsx       - Vos coordonnées
+4. src/components/layout/Navbar.tsx - Logo et nom
+5. src/components/layout/Footer.tsx - Infos contact
+6. tailwind.config.js          - Couleurs de marque
+7. index.html                  - Meta tags SEO
+

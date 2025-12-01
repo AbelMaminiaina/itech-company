@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white dark:bg-dark-900 text-gray-900 dark:text-white;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20;
+  }
+
+  .glass-dark {
+    @apply bg-black/10 backdrop-blur-lg border border-black/20;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-electric-400 to-electric-600 bg-clip-text text-transparent;
+  }
+
+  .neo-brutalism {
+    @apply border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]
+           hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]
+           transition-all duration-200;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-dark-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-electric-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-electric-600;
+}
+
+/* Selection */
+::selection {
+  @apply bg-electric-500 text-white;
+}
+
+/* Focus visible */
+:focus-visible {
+  @apply outline-none ring-2 ring-electric-500 ring-offset-2;
+}
