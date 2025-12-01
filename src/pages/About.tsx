@@ -37,7 +37,7 @@ const About = () => {
     {
       name: 'RABETSIMIALONA Abel',
       role: 'Tech Lead',
-      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=AbelMale&gender=male',
+      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Fandresena',
       bio: 'Expert .Net et architecture logicielle',
     },
     {
