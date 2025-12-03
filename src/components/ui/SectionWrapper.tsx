@@ -23,7 +23,7 @@ const SectionWrapper = ({
   return (
     <section
       id={id}
-      className={`py-20 md:py-32 ${backgrounds[background]} ${className}`}
+      className={`py-12 md:py-20 ${backgrounds[background]} ${className}`}
     >
       <motion.div
         className="container-custom"

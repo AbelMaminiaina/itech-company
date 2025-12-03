@@ -31,6 +31,7 @@ export default {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         display: ['Outfit', 'Inter', 'system-ui', 'sans-serif'],
+        poppins: ['Poppins', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out',
@@ -39,6 +40,7 @@ export default {
         'scale-in': 'scaleIn 0.4s ease-out',
         'float': 'float 3s ease-in-out infinite',
         'glow': 'glow 2s ease-in-out infinite alternate',
+        'scroll': 'scroll 30s linear infinite',
       },
       keyframes: {
         fadeIn: {
@@ -64,6 +66,10 @@ export default {
         glow: {
           '0%': { boxShadow: '0 0 20px rgba(0, 112, 243, 0.3)' },
           '100%': { boxShadow: '0 0 30px rgba(0, 112, 243, 0.6)' },
+        },
+        scroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
       },
       backgroundImage: {

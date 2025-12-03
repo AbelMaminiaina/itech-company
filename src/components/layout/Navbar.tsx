@@ -11,8 +11,8 @@ interface NavbarProps {
 const navigation = [
   { name: 'Accueil', path: '/' },
   { name: 'Services', path: '/services' },
-  { name: 'Portfolio', path: '/portfolio' },
-  { name: 'À propos', path: '/about' },
+  // { name: 'Portfolio', path: '/portfolio' },
+  // { name: 'À propos', path: '/about' },
   { name: 'Blog', path: '/blog' },
   { name: 'Recrutement', path: '/recrutement' },
   { name: 'Contact', path: '/contact' },

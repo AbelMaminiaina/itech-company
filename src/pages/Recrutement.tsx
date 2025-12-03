@@ -9,59 +9,40 @@ const Recrutement = () => {
   const jobs = [
     {
       id: 1,
-      title: 'Développeur Odoo',
+      title: 'Développeur .NET',
       type: 'CDI',
-      experience: '2-5 ans',
-      description: 'Nous recherchons un développeur Odoo expérimenté pour développer et personnaliser des modules ERP pour nos clients.',
+      experience: '3-5 ans',
+      description: 'Nous recherchons un développeur .NET expérimenté pour concevoir et développer des applications web et desktop robustes pour nos clients.',
       requirements: [
-        'Maîtrise d\'Odoo (versions 14+)',
-        'Connaissance de Python et PostgreSQL',
-        'Expérience en développement de modules personnalisés',
-        'Capacité à analyser les besoins métier',
+        'Maîtrise de C# et .NET Core / .NET 6+',
+        'Expérience avec ASP.NET Core, Entity Framework',
+        'Connaissance de SQL Server et Azure',
+        'Bonnes pratiques de développement (SOLID, Design Patterns)',
       ],
       benefits: [
         'Salaire compétitif',
         'Télétravail flexible',
         'Formation continue',
-        'Projets variés',
+        'Projets internationaux',
       ],
     },
     {
       id: 2,
-      title: 'Développeur WordPress',
+      title: 'Designer UX/UI',
       type: 'CDI',
       experience: '2-4 ans',
-      description: 'Créez des sites WordPress performants et personnalisés pour nos clients avec des thèmes et plugins sur mesure.',
+      description: 'Créez des interfaces utilisateur élégantes et intuitives pour nos applications web et mobiles en plaçant l\'expérience utilisateur au cœur de chaque projet.',
       requirements: [
-        'Maîtrise de WordPress, PHP, MySQL',
-        'Expérience en développement de thèmes et plugins',
-        'Connaissance de WooCommerce',
-        'Bonnes pratiques SEO et performance',
+        'Maîtrise de Figma, Adobe XD ou Sketch',
+        'Expérience en design d\'interfaces web et mobile',
+        'Compréhension des principes UX et d\'accessibilité',
+        'Portfolio démontrant votre expertise',
       ],
       benefits: [
         'Environnement créatif',
         'Projets diversifiés',
         'Horaires flexibles',
         'Évolution de carrière',
-      ],
-    },
-    {
-      id: 3,
-      title: 'Consultant Systeme.io & Zapier',
-      type: 'CDI',
-      experience: '1-3 ans',
-      description: 'Accompagnez nos clients dans l\'automatisation de leurs processus marketing et business avec Systeme.io et Zapier.',
-      requirements: [
-        'Maîtrise de Systeme.io (tunnels de vente, emailing)',
-        'Expérience avec Zapier et automatisations',
-        'Connaissance des outils no-code',
-        'Excellentes compétences en communication',
-      ],
-      benefits: [
-        'Formation sur les derniers outils',
-        'Clients internationaux',
-        'Télétravail possible',
-        'Prime de performance',
       ],
     },
   ]
@@ -89,12 +70,12 @@ const Recrutement = () => {
     <div className="pt-20">
       <SEO
         title="Recrutement"
-        description="Rejoignez l'équipe iTech-Company à Madagascar et en France ! Nous recherchons des développeurs Odoo, WordPress et consultants Systeme.io & Zapier. Postulez maintenant."
-        keywords="recrutement développeur Madagascar, recrutement développeur France, emploi tech Antananarivo, emploi tech Paris, développeur Odoo, développeur WordPress, consultant Systeme.io, carrière développement web"
+        description="Rejoignez l'équipe iTech-Company à Madagascar et en France ! Nous recherchons des développeurs .NET et designers UX/UI passionnés. Postulez maintenant."
+        keywords="recrutement développeur Madagascar, recrutement développeur France, emploi tech Antananarivo, emploi tech Paris, développeur .NET, designer UX/UI, UX designer, carrière développement web"
         url="/recrutement"
       />
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-dark-900 dark:via-dark-800 dark:to-dark-900 py-20 md:py-32">
+      <section className="relative bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-dark-900 dark:via-dark-800 dark:to-dark-900 py-16 md:py-24">
         <div className="container-custom">
           <motion.div
             className="max-w-3xl mx-auto text-center"
@@ -240,15 +221,15 @@ const Recrutement = () => {
       {/* CTA Section */}
       <SectionWrapper background="dark">
         <motion.div
-          className="text-center max-w-3xl mx-auto"
+          className="text-center max-w-2xl mx-auto py-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-display mb-6 text-white">
+          <h2 className="text-3xl md:text-4xl font-semibold font-poppins mb-4 text-white">
             Candidature spontanée
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-lg text-gray-300 mb-6">
             Vous ne trouvez pas le poste idéal ? Envoyez-nous votre candidature spontanée !
           </p>
           <Button

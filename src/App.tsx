@@ -27,6 +27,11 @@ function AppContent() {
     logPageView(location.pathname, document.title)
   }, [location])
 
+  // Scroll vers le haut à chaque changement de page
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location.pathname])
+
   useEffect(() => {
     // Check system preference
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches

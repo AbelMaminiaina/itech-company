@@ -172,7 +172,7 @@ const About = () => {
               <div>
                 <h3 className="text-2xl font-bold mb-3">Notre Vision</h3>
                 <p className="text-gray-600 dark:text-gray-400">
-                  Devenir la référence en matière d'innovation digitale en France et à l'international,
+                  Devenir la référence en matière d'innovation digitale à l'international,
                   reconnue pour son excellence technique et la qualité de ses réalisations.
                 </p>
               </div>

@@ -1,11 +1,13 @@
 import { motion } from 'framer-motion'
-import { Calendar, User, ArrowRight } from 'lucide-react'
+import { Calendar, User, ArrowRight, Search } from 'lucide-react'
 import SectionWrapper from '../components/ui/SectionWrapper'
 import Card from '../components/ui/Card'
 import { Link } from 'react-router-dom'
 import SEO from '../components/SEO'
+import { useState } from 'react'
 
 const Blog = () => {
+  const [searchQuery, setSearchQuery] = useState('')
   const articles = [
     {
       id: 1,
@@ -71,6 +73,17 @@ const Blog = () => {
 
   const categories = ['Tous', 'Développement', 'Design', 'DevOps', 'IA', 'Mobile', 'Sécurité']
 
+  // Filter articles based on search query
+  const filteredArticles = articles.filter((article) => {
+    const query = searchQuery.toLowerCase()
+    return (
+      article.title.toLowerCase().includes(query) ||
+      article.excerpt.toLowerCase().includes(query) ||
+      article.category.toLowerCase().includes(query) ||
+      article.author.toLowerCase().includes(query)
+    )
+  })
+
   return (
     <div className="pt-20">
       <SEO
@@ -81,7 +94,7 @@ const Blog = () => {
       />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-dark-900 dark:via-dark-800 dark:to-dark-900 py-20 md:py-32">
+      <section className="relative bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-dark-900 dark:via-dark-800 dark:to-dark-900 py-16 md:py-24">
         <div className="container-custom">
           <motion.div
             className="max-w-3xl mx-auto text-center"
@@ -92,9 +105,31 @@ const Blog = () => {
             <h1 className="text-5xl md:text-6xl font-bold font-display mb-6">
               Notre <span className="text-gradient">Blog</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300">
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
               Actualités, conseils et tendances du monde digital
             </p>
+
+            {/* Search Bar */}
+            <motion.div
+              className="max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <div className="relative">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <input
+                  type="text"
+                  placeholder="Rechercher des articles par mot-clé..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-12 pr-4 py-4 rounded-xl bg-white dark:bg-dark-800 text-gray-900 dark:text-white border-2 border-gray-200 dark:border-dark-700 focus:ring-2 focus:ring-electric-500 focus:border-electric-500 transition-all shadow-lg"
+                />
+              </div>
+              <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 italic">
+                💡 Explorez l'innovation tech, un article à la fois
+              </p>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -105,6 +140,7 @@ const Blog = () => {
           className="flex flex-wrap justify-center gap-4 mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
         >
           {categories.map((category) => (
             <button
@@ -117,8 +153,9 @@ const Blog = () => {
         </motion.div>
 
         {/* Articles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {articles.map((article, index) => (
+        {filteredArticles.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredArticles.map((article, index) => (
             <motion.div
               key={article.id}
               initial={{ opacity: 0, y: 20 }}
@@ -171,22 +208,35 @@ const Blog = () => {
                 </div>
               </Card>
             </motion.div>
-          ))}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <motion.div
+            className="text-center py-20"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
+            <div className="text-6xl mb-4">🔍</div>
+            <h3 className="text-2xl font-semibold mb-2">Aucun article trouvé</h3>
+            <p className="text-gray-600 dark:text-gray-400">
+              Essayez avec d'autres mots-clés
+            </p>
+          </motion.div>
+        )}
       </SectionWrapper>
 
       {/* CTA Section */}
       <SectionWrapper background="dark">
         <motion.div
-          className="text-center max-w-3xl mx-auto"
+          className="text-center max-w-2xl mx-auto py-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-display mb-6 text-white">
+          <h2 className="text-3xl md:text-4xl font-semibold font-poppins mb-4 text-white">
             Restez informé
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-lg text-gray-300 mb-6">
             Abonnez-vous à notre newsletter pour recevoir nos derniers articles
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">

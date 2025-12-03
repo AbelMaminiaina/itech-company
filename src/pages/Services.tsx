@@ -113,7 +113,7 @@ const Services = () => {
       />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-dark-900 dark:via-dark-800 dark:to-dark-900 py-20 md:py-32">
+      <section className="relative bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-dark-900 dark:via-dark-800 dark:to-dark-900 py-16 md:py-24">
         <div className="container-custom">
           <motion.div
             className="max-w-3xl mx-auto text-center"
@@ -191,15 +191,15 @@ const Services = () => {
       {/* CTA Section */}
       <SectionWrapper background="dark">
         <motion.div
-          className="text-center max-w-3xl mx-auto"
+          className="text-center max-w-2xl mx-auto py-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-display mb-6 text-white">
+          <h2 className="text-3xl md:text-4xl font-semibold font-poppins mb-4 text-white">
             Besoin d'un service spécifique ?
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-lg text-gray-300 mb-6">
             Contactez-nous pour discuter de votre projet et obtenir un devis personnalisé
           </p>
           <Link to="/contact">

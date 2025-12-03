@@ -96,50 +96,54 @@ const Home = () => {
       <StructuredData type="WebSite" />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-dark-900 dark:via-dark-800 dark:to-dark-900 pt-20">
-        {/* Animated background elements */}
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-purple-50/20 to-blue-50/10 dark:from-dark-900 dark:via-dark-900 dark:to-dark-900 pt-48 pb-20">
+        {/* Subtle background gradient */}
         <div className="absolute inset-0 overflow-hidden">
-          <motion.div
-            className="absolute top-1/4 left-1/4 w-96 h-96 bg-electric-500/10 rounded-full blur-3xl"
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.5, 0.3],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
-          <motion.div
-            className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"
-            animate={{
-              scale: [1.2, 1, 1.2],
-              opacity: [0.5, 0.3, 0.5],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-200/10 dark:bg-purple-500/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-200/10 dark:bg-blue-500/5 rounded-full blur-3xl" />
         </div>
 
         <div className="container-custom relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-6xl mx-auto text-center px-4">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              className="space-y-8"
             >
-              <h1 className="text-5xl md:text-7xl font-bold font-display mb-6">
-                Nous créons des{' '}
-                <span className="text-gradient">expériences numériques</span>
-                <br />à fort impact
+              {/* Badge */}
+              <motion.div
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-purple-100/80 dark:bg-purple-900/30 backdrop-blur-sm border border-purple-200 dark:border-purple-700 rounded-full"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                {/* <span className="text-xl">👑</span>
+                <span className="text-sm font-medium text-purple-700 dark:text-purple-300">
+                  Première ESN franco-malgache en 2025
+                </span> */}
+              </motion.div>
+
+              {/* Main heading with colored keywords */}
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-poppins leading-[1.1] tracking-tight">
+                Nous{' '}
+                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-purple-600 dark:from-blue-400 dark:via-purple-400 dark:to-purple-400 bg-clip-text text-transparent">
+                  créons des expériences
+                </span>{' '}
+                
+                <br />
+               numériques à fort impact
               </h1>
-              <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-                Agence web moderne spécialisée en développement, design et innovation digitale
+
+              {/* Subtitle with mixed styling */}
+              <p className="text-lg sm:text-xl md:text-2xl leading-relaxed max-w-4xl mx-auto">
+                <span className="text-gray-400 dark:text-gray-500">Agence web moderne spécialisée en développement, 
+,</span>
+                {' '}
+                <span className="text-gray-900 dark:text-white font-medium">design et innovation digitale.</span>
               </p>
+
+              {/* CTA Button */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/contact">
                   <Button size="lg" icon={ArrowRight}>
@@ -153,75 +157,85 @@ const Home = () => {
                 </Link>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
 
-            {/* Partners */}
-            <div className="mt-20">
-              <motion.p
-                className="text-center text-gray-600 dark:text-gray-400 mb-6"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                Nos partenaires de confiance
-              </motion.p>
-              <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-                {[
-                  { name: 'Ghrades' },
-                  { name: 'Build Company' },
-                ].map((partner, index) => (
-                  <motion.div
-                    key={index}
-                    className="text-center"
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{
-                      duration: 0.6,
-                      delay: 0.4 + index * 0.2,
-                      ease: "easeOut"
-                    }}
-                    whileHover={{
-                      scale: 1.1,
-                      transition: { duration: 0.2 }
-                    }}
-                  >
-                    <motion.h3
-                      className="text-2xl md:text-4xl font-bold font-display text-gradient"
-                      animate={{
-                        opacity: [0.7, 1, 0.7],
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: index * 0.5
-                      }}
-                    >
-                      {partner.name}
-                    </motion.h3>
-                  </motion.div>
-                ))}
-              </div>
+      {/* Tech Stack Logos Animation */}
+      <section className="relative py-12 bg-white dark:bg-dark-900 overflow-hidden">
+        {/* <div className="container-custom">
+          <p className="text-center text-sm text-gray-500 dark:text-gray-400 mb-8">
+            Technologies que nous maîtrisons
+          </p>
+        </div> */}
+
+        <div className="relative">
+          {/* Gradient overlays */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white dark:from-dark-900 to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white dark:from-dark-900 to-transparent z-10" />
+
+          {/* Scrolling container */}
+          <div className="flex animate-scroll">
+            {/* First set of logos */}
+            <div className="flex items-center gap-12 px-6">
+              {[
+                { name: 'React', icon: '⚛️' },
+                { name: 'Node.js', icon: '🟢' },
+                { name: 'TypeScript', icon: '🔷' },
+                { name: 'Python', icon: '🐍' },
+                { name: '.NET', icon: '🟣' },
+                { name: 'SQL', icon: '🗄️' },
+                { name: 'MongoDB', icon: '🍃' },
+                { name: 'Docker', icon: '🐳' },
+                { name: 'Azure', icon: '☁️' },
+                { name: 'Figma', icon: '🎨' },
+              ].map((tech) => (
+                <div
+                  key={tech.name}
+                  className="flex items-center gap-3 px-6 py-4 bg-gray-100 dark:bg-dark-800 rounded-xl border border-gray-200 dark:border-dark-700 whitespace-nowrap"
+                >
+                  <span className="text-3xl">{tech.icon}</span>
+                  <span className="font-semibold text-gray-700 dark:text-gray-300">
+                    {tech.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* Duplicate set for seamless loop */}
+            <div className="flex items-center gap-12 px-6">
+              {[
+                { name: 'React', icon: '⚛️' },
+                { name: 'Node.js', icon: '🟢' },
+                { name: 'TypeScript', icon: '🔷' },
+                { name: 'Python', icon: '🐍' },
+                { name: '.NET', icon: '🟣' },
+                { name: 'SQL', icon: '🗄️' },
+                { name: 'MongoDB', icon: '🍃' },
+                { name: 'Docker', icon: '🐳' },
+                { name: 'Azure', icon: '☁️' },
+                { name: 'Figma', icon: '🎨' },
+              ].map((tech) => (
+                <div
+                  key={`${tech.name}-2`}
+                  className="flex items-center gap-3 px-6 py-4 bg-gray-100 dark:bg-dark-800 rounded-xl border border-gray-200 dark:border-dark-700 whitespace-nowrap"
+                >
+                  <span className="text-3xl">{tech.icon}</span>
+                  <span className="font-semibold text-gray-700 dark:text-gray-300">
+                    {tech.name}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <div className="w-6 h-10 border-2 border-gray-400 dark:border-gray-600 rounded-full flex justify-center">
-            <div className="w-1.5 h-3 bg-gray-400 dark:bg-gray-600 rounded-full mt-2" />
-          </div>
-        </motion.div>
       </section>
 
       {/* Services Section */}
       <SectionWrapper id="services" background="gray">
         <div className="text-center mb-16">
           <motion.h2
-            className="text-4xl md:text-5xl font-bold font-display mb-4"
+            className="text-4xl md:text-5xl font-bold font-poppins mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -276,7 +290,7 @@ const Home = () => {
       <SectionWrapper id="projects">
         <div className="text-center mb-16">
           <motion.h2
-            className="text-4xl md:text-5xl font-bold font-display mb-4"
+            className="text-4xl md:text-5xl font-bold font-poppins mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -347,7 +361,7 @@ const Home = () => {
       <SectionWrapper background="gray">
         <div className="text-center mb-16">
           <motion.h2
-            className="text-4xl md:text-5xl font-bold font-display mb-4"
+            className="text-4xl md:text-5xl font-bold font-poppins mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -381,7 +395,7 @@ const Home = () => {
       <SectionWrapper>
         <div className="text-center mb-16">
           <motion.h2
-            className="text-4xl md:text-5xl font-bold font-display mb-4"
+            className="text-4xl md:text-5xl font-bold font-poppins mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -401,7 +415,7 @@ const Home = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-display mb-6 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold font-poppins mb-6 text-white">
             Prêt à démarrer votre <span className="text-gradient">projet ?</span>
           </h2>
           <p className="text-xl text-gray-300 mb-8">
