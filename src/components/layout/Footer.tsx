@@ -34,10 +34,10 @@ const Footer = () => {
       { name: 'Blog', path: '#' },
     ],
     legal: [
-      { name: 'Mentions légales', path: '#' },
-      { name: 'Politique de confidentialité', path: '#' },
-      { name: 'CGV', path: '#' },
-      { name: 'Cookies', path: '#' },
+      { name: 'Mentions légales', path: '/mentions-legales' },
+      { name: 'Politique de confidentialité', path: '/politique-confidentialite' },
+      { name: 'CGV', path: '/cgv' },
+      { name: 'Cookies', path: '/cookies' },
     ],
   }
 

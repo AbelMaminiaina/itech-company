@@ -1,34 +1,80 @@
 import ReactGA from 'react-ga4'
+import { hasAnalyticsConsent } from './cookieConsent'
 
 // Remplacez 'G-XXXXXXXXXX' par votre véritable ID de mesure Google Analytics 4
 // Pour obtenir votre ID : https://analytics.google.com/ > Admin > Flux de données
 const GA_MEASUREMENT_ID = 'G-VE6GB3ZXD6'
 
-// Initialiser Google Analytics
+// Variable pour suivre si GA est initialisé
+let isGAInitialized = false
+
+// Initialiser Google Analytics (seulement si le consentement est donné)
 export const initGA = () => {
-  ReactGA.initialize(GA_MEASUREMENT_ID, {
-    gaOptions: {
-      anonymizeIp: true, // Anonymiser les IP pour RGPD
-    },
-  })
+  // Vérifier le consentement avant d'initialiser
+  if (!hasAnalyticsConsent()) {
+    console.log('[Analytics] Consentement non donné, Google Analytics n\'est pas initialisé')
+    return
+  }
+
+  // Éviter la double initialisation
+  if (isGAInitialized) {
+    return
+  }
+
+  try {
+    ReactGA.initialize(GA_MEASUREMENT_ID, {
+      gaOptions: {
+        anonymizeIp: true, // Anonymiser les IP pour RGPD
+      },
+    })
+    isGAInitialized = true
+    console.log('[Analytics] Google Analytics initialisé avec succès')
+  } catch (error) {
+    console.error('[Analytics] Erreur lors de l\'initialisation de Google Analytics:', error)
+  }
+}
+
+// Désactiver Google Analytics
+export const disableGA = () => {
+  if (isGAInitialized) {
+    // Google Analytics ne peut pas être vraiment "désinitialisé", mais on peut arrêter de l'utiliser
+    isGAInitialized = false
+    console.log('[Analytics] Google Analytics désactivé')
+  }
 }
 
 // Logger une page vue
 export const logPageView = (path: string, title: string) => {
-  ReactGA.send({
-    hitType: 'pageview',
-    page: path,
-    title: title,
-  })
+  if (!isGAInitialized || !hasAnalyticsConsent()) {
+    return
+  }
+
+  try {
+    ReactGA.send({
+      hitType: 'pageview',
+      page: path,
+      title: title,
+    })
+  } catch (error) {
+    console.error('[Analytics] Erreur lors du log de page vue:', error)
+  }
 }
 
 // Logger un événement personnalisé
 export const logEvent = (category: string, action: string, label?: string) => {
-  ReactGA.event({
-    category: category,
-    action: action,
-    label: label,
-  })
+  if (!isGAInitialized || !hasAnalyticsConsent()) {
+    return
+  }
+
+  try {
+    ReactGA.event({
+      category: category,
+      action: action,
+      label: label,
+    })
+  } catch (error) {
+    console.error('[Analytics] Erreur lors du log d\'événement:', error)
+  }
 }
 
 // Événements personnalisés pour iTech-Company
