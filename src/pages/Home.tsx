@@ -257,22 +257,70 @@ const Home = () => {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{
+                delay: index * 0.1,
+                duration: 0.5,
+                type: "spring",
+                stiffness: 100
+              }}
             >
-              <Card className="h-full">
-                <div className="flex flex-col h-full">
-                  <div className="w-14 h-14 bg-electric-500/10 rounded-xl flex items-center justify-center mb-4">
-                    <service.icon className="w-7 h-7 text-electric-500" />
+              <motion.div
+                whileHover={{
+                  y: -10,
+                  transition: { duration: 0.3 }
+                }}
+                className="h-full"
+              >
+                <Card className="h-full overflow-hidden relative group">
+                  {/* Gradient animé au hover */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-br from-electric-500/5 via-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  />
+
+                  <div className="flex flex-col h-full relative z-10">
+                    {/* Icône animée */}
+                    <motion.div
+                      className="w-14 h-14 bg-electric-500/10 rounded-xl flex items-center justify-center mb-4 relative overflow-hidden group-hover:bg-electric-500/20 transition-colors duration-300"
+                      whileHover={{ rotate: [0, -10, 10, -10, 0] }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      {/* Effet de brillance */}
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                        initial={{ x: '-100%' }}
+                        whileHover={{ x: '100%' }}
+                        transition={{ duration: 0.6 }}
+                      />
+                      <motion.div
+                        whileHover={{ scale: 1.2 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <service.icon className="w-7 h-7 text-electric-500 group-hover:text-electric-600 transition-colors duration-300" />
+                      </motion.div>
+                    </motion.div>
+
+                    <h3 className="text-xl font-semibold mb-3 group-hover:text-electric-500 transition-colors duration-300">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400 flex-grow">
+                      {service.description}
+                    </p>
+
+                    {/* Barre de progression animée en bas */}
+                    <motion.div
+                      className="h-1 bg-gradient-to-r from-electric-500 to-purple-600 mt-4 rounded-full"
+                      initial={{ scaleX: 0 }}
+                      whileInView={{ scaleX: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 + 0.3, duration: 0.6 }}
+                      style={{ transformOrigin: 'left' }}
+                    />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-400 flex-grow">
-                    {service.description}
-                  </p>
-                </div>
-              </Card>
+                </Card>
+              </motion.div>
             </motion.div>
           ))}
         </div>
