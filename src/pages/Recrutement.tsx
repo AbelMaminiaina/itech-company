@@ -75,18 +75,30 @@ const Recrutement = () => {
         url="/recrutement"
       />
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-dark-900 dark:via-dark-800 dark:to-dark-900 py-16 md:py-24">
-        <div className="container-custom">
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&h=1080&fit=crop&q=80"
+            alt="Rejoignez l'équipe iTech-Company - Carrière digitale"
+            className="w-full h-full object-cover"
+          />
+          {/* Overlay pour améliorer la lisibilité */}
+          <div className="absolute inset-0 bg-gradient-to-br from-dark-900/90 via-dark-900/85 to-blue-900/80 dark:from-dark-900/95 dark:via-dark-900/90 dark:to-blue-900/85"></div>
+        </div>
+
+        {/* Content */}
+        <div className="container-custom relative z-10">
           <motion.div
             className="max-w-3xl mx-auto text-center"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold font-display mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold font-display mb-6 text-white">
               Rejoignez <span className="text-gradient">notre équipe</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300">
+            <p className="text-xl md:text-2xl text-gray-100 dark:text-gray-200">
               Construisez votre carrière dans une agence digitale dynamique et innovante
             </p>
           </motion.div>

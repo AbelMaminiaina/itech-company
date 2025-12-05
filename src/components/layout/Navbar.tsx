@@ -95,12 +95,6 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
                   }`}
                 >
                   {item.name}
-                  {location.pathname === item.path && !hideNavbar && (
-                    <motion.div
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-electric-500"
-                      layoutId="navbar-indicator"
-                    />
-                  )}
                 </Link>
               ))}
             </div>

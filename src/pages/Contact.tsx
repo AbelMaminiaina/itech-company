@@ -254,6 +254,21 @@ const Contact = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex flex-col justify-center h-full"
             >
+              {/* Modern Agency Image */}
+              <motion.div
+                className="mb-8 rounded-2xl overflow-hidden shadow-2xl"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=500&fit=crop&q=80"
+                  alt="Équipe iTech-Company - Agence web moderne"
+                  className="w-full h-64 md:h-80 object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </motion.div>
+
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-poppins mb-6 leading-tight">
                 Nous{' '}
                 <span className="text-gradient">créons des expériences</span>{' '}
