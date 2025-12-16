@@ -97,10 +97,27 @@ const Home = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-purple-50/20 to-blue-50/10 dark:from-dark-900 dark:via-dark-900 dark:to-dark-900 pt-48 pb-20">
-        {/* Subtle background gradient */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-200/10 dark:bg-purple-500/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-200/10 dark:bg-blue-500/5 rounded-full blur-3xl" />
+        {/* Background image with overlay - starts below navbar */}
+        <div className="absolute top-20 left-0 right-0 bottom-0 overflow-hidden">
+          <motion.div
+            className="absolute inset-0"
+            initial={{ scale: 1.1, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+          >
+            <img
+              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&h=1080&fit=crop&q=80"
+              alt="Technology background"
+              className="w-full h-full object-cover"
+            />
+            {/* Gradient overlays for readability - stronger opacity */}
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-900/97 via-purple-950/96 to-blue-950/97 dark:from-dark-900/98 dark:via-purple-950/98 dark:to-dark-900/98" />
+            <div className="absolute inset-0 bg-black/30" />
+          </motion.div>
+
+          {/* Animated gradient blobs */}
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/10 dark:bg-purple-500/5 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 dark:bg-blue-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
 
         <div className="container-custom relative z-10">
@@ -124,23 +141,83 @@ const Home = () => {
                 </span> */}
               </motion.div>
 
-              {/* Main heading with colored keywords */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-poppins leading-[1.1] tracking-tight">
-                Nous{' '}
-                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-purple-600 dark:from-blue-400 dark:via-purple-400 dark:to-purple-400 bg-clip-text text-transparent">
-                  créons des expériences
-                </span>{' '}
-                
+              {/* Main heading with colored keywords and animated text reveal */}
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-poppins leading-[1.1] tracking-tight overflow-hidden text-white" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8)' }}>
+                <motion.span
+                  className="inline-block"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  Nous
+                </motion.span>{' '}
+                <motion.span
+                  className="inline-block bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 bg-clip-text text-transparent"
+                  style={{ filter: 'drop-shadow(0 0 30px rgba(147, 51, 234, 0.8)) drop-shadow(0 4px 20px rgba(0,0,0,0.9))' }}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  créons
+                </motion.span>{' '}
+                <motion.span
+                  className="inline-block bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 bg-clip-text text-transparent"
+                  style={{ filter: 'drop-shadow(0 0 30px rgba(147, 51, 234, 0.8)) drop-shadow(0 4px 20px rgba(0,0,0,0.9))' }}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  des
+                </motion.span>{' '}
+                <motion.span
+                  className="inline-block bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 bg-clip-text text-transparent"
+                  style={{ filter: 'drop-shadow(0 0 30px rgba(147, 51, 234, 0.8)) drop-shadow(0 4px 20px rgba(0,0,0,0.9))' }}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  expériences
+                </motion.span>
                 <br />
-               numériques à fort impact
+                <motion.span
+                  className="inline-block"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  numériques
+                </motion.span>{' '}
+                <motion.span
+                  className="inline-block"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  à
+                </motion.span>{' '}
+                <motion.span
+                  className="inline-block"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.0, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  fort
+                </motion.span>{' '}
+                <motion.span
+                  className="inline-block"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  impact
+                </motion.span>
               </h1>
 
               {/* Subtitle with mixed styling */}
-              <p className="text-lg sm:text-xl md:text-2xl leading-relaxed max-w-4xl mx-auto">
-                <span className="text-gray-400 dark:text-gray-500">Agence web moderne spécialisée en développement, 
-,</span>
+              <p className="text-lg sm:text-xl md:text-2xl leading-relaxed max-w-4xl mx-auto" style={{ textShadow: '0 2px 15px rgba(0,0,0,0.9)' }}>
+                <span className="text-gray-200">Agence web moderne spécialisée en développement,</span>
                 {' '}
-                <span className="text-gray-900 dark:text-white font-medium">design et innovation digitale.</span>
+                <span className="text-white font-medium">design et innovation digitale.</span>
               </p>
 
               {/* CTA Button */}
