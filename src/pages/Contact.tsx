@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Mail, Send, Star } from 'lucide-react'
+import emailjs from '@emailjs/browser'
 import SectionWrapper from '../components/ui/SectionWrapper'
 import Card from '../components/ui/Card'
 import Button from '../components/ui/Button'
@@ -9,9 +10,10 @@ import SEO from '../components/SEO'
 import { trackContactFormSubmit } from '../utils/analytics'
 
 const Contact = () => {
+  const formRef = useRef<HTMLFormElement>(null)
   const [formData, setFormData] = useState({
     name: '',
-    lastname : '',
+    lastname: '',
     email: '',
     phone: '',
     subject: '',
@@ -35,22 +37,42 @@ const Contact = () => {
     // Tracker la soumission du formulaire
     trackContactFormSubmit()
 
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false)
+    try {
+      const templateParams = {
+        name: formData.name,
+        lastname: formData.lastname,
+        email: formData.email,
+        phone: formData.phone || 'Non renseigné',
+        subject: formData.subject,
+        message: formData.message,
+      }
+
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+
       setSubmitStatus('success')
       setFormData({
         name: '',
-        lastname : '',
+        lastname: '',
         email: '',
         phone: '',
         subject: '',
         message: '',
       })
-
+    } catch (error: any) {
+      console.error('EmailJS error:', error)
+      console.error('Error text:', error?.text)
+      console.error('Error status:', error?.status)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
       // Reset status after 5 seconds
       setTimeout(() => setSubmitStatus(null), 5000)
-    }, 1500)
+    }
   }
 
   const testimonials = [
@@ -124,7 +146,7 @@ const Contact = () => {
                 </div>
               )}
 
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -143,18 +165,18 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">
-                      Prenom<span className="text-red-500">*</span>
+                    <label htmlFor="lastname" className="block text-sm font-medium mb-2">
+                      Prénom<span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
-                      id="name"
-                      name="name"
+                      id="lastname"
+                      name="lastname"
                       value={formData.lastname}
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-dark-700 bg-white dark:bg-dark-800 focus:ring-2 focus:ring-electric-500 focus:border-transparent transition-all"
-                      placeholder="Votre prenom"
+                      placeholder="Votre prénom"
                     />
                   </div>
 

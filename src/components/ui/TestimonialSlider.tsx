@@ -16,6 +16,15 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
+    name: 'Noro',
+    role: 'CEO',
+    company: 'Grhades',
+    content: 'iTech-Company a développé notre site e-commerce sur Odoo avec un professionnalisme remarquable. Leur maîtrise technique et leur réactivité ont permis de livrer un projet de qualité dans les délais. Je recommande vivement !',
+    rating: 5,
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Noro',
+  },
+  {
+    id: 2,
     name: 'Marie Dubois',
     role: 'CEO',
     company: 'TechStart SAS',
@@ -24,7 +33,7 @@ const testimonials: Testimonial[] = [
     avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Marie',
   },
   {
-    id: 2,
+    id: 3,
     name: 'Thomas Martin',
     role: 'CTO',
     company: 'InnovateLab',
@@ -33,7 +42,7 @@ const testimonials: Testimonial[] = [
     avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Thomas',
   },
   {
-    id: 3,
+    id: 4,
     name: 'Sophie Laurent',
     role: 'Product Manager',
     company: 'Digital Solutions',

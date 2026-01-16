@@ -6,6 +6,17 @@ import SEO from '../components/SEO'
 
 export const projects = [
   {
+    id: 7,
+    title: 'Site E-Commerce Odoo',
+    category: 'Web Development',
+    description: 'Plateforme e-commerce complète développée sur Odoo avec gestion des stocks, catalogue produits, paiement en ligne et tableau de bord analytique.',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
+    stack: ['Odoo', 'Python', 'PostgreSQL', 'JavaScript', 'XML'],
+    year: '2025',
+    client: 'Grhades',
+    website: 'https://www.grhades.com',
+  },
+  {
     id: 1,
     title: 'E-Commerce Luxe Premium',
     category: 'Web Development',

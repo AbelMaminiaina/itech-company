@@ -44,6 +44,13 @@ const Home = () => {
 
   const projects = [
     {
+      id: 7,
+      title: 'Site E-Commerce Odoo',
+      category: 'Web Development',
+      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
+      stack: ['Odoo', 'Python', 'PostgreSQL'],
+    },
+    {
       id: 1,
       title: 'E-Commerce Luxe',
       category: 'Web Development',
@@ -56,13 +63,6 @@ const Home = () => {
       category: 'Mobile App',
       image: 'https://images.unsplash.com/photo-1461773518188-b3e86f98242f?w=800&h=600&fit=crop',
       stack: ['React Native', 'Firebase', 'Redux'],
-    },
-    {
-      id: 3,
-      title: 'Dashboard Analytics',
-      category: 'UI/UX Design',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
-      stack: ['Figma', 'React', 'D3.js'],
     },
   ]
 

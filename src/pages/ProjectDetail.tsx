@@ -166,9 +166,13 @@ const ProjectDetail = () => {
               <h3 className="text-xl font-bold mb-4">Client</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-6">{project.client}</p>
 
-              <Button variant="primary" icon={ExternalLink} className="w-full">
-                Visiter le site
-              </Button>
+              {project.website && (
+                <a href={project.website} target="_blank" rel="noopener noreferrer">
+                  <Button variant="primary" icon={ExternalLink} className="w-full">
+                    Visiter le site
+                  </Button>
+                </a>
+              )}
             </motion.div>
           </div>
         </div>
