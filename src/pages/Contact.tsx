@@ -1,8 +1,7 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Mail, Send, Star } from 'lucide-react'
-import emailjs from '@emailjs/browser'
 import SectionWrapper from '../components/ui/SectionWrapper'
 import Card from '../components/ui/Card'
 import Button from '../components/ui/Button'
@@ -10,7 +9,6 @@ import SEO from '../components/SEO'
 import { trackContactFormSubmit } from '../utils/analytics'
 
 const Contact = () => {
-  const formRef = useRef<HTMLFormElement>(null)
   const [formData, setFormData] = useState({
     name: '',
     lastname: '',
@@ -38,35 +36,36 @@ const Contact = () => {
     trackContactFormSubmit()
 
     try {
-      const templateParams = {
-        name: formData.name,
-        lastname: formData.lastname,
-        email: formData.email,
-        phone: formData.phone || 'Non renseigné',
-        subject: formData.subject,
-        message: formData.message,
-      }
-
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        templateParams,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      )
-
-      setSubmitStatus('success')
-      setFormData({
-        name: '',
-        lastname: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: '',
+      const response = await fetch(import.meta.env.VITE_FORMSPREE_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          lastname: formData.lastname,
+          email: formData.email,
+          phone: formData.phone || 'Non renseigné',
+          subject: formData.subject,
+          message: formData.message,
+        }),
       })
-    } catch (error: any) {
-      console.error('EmailJS error:', error)
-      console.error('Error text:', error?.text)
-      console.error('Error status:', error?.status)
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        setFormData({
+          name: '',
+          lastname: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: '',
+        })
+      } else {
+        setSubmitStatus('error')
+      }
+    } catch (error) {
+      console.error('Formspree error:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -146,7 +145,7 @@ const Contact = () => {
                 </div>
               )}
 
-              <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-2">
