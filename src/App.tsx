@@ -18,6 +18,7 @@ import PolitiqueConfidentialite from './pages/PolitiqueConfidentialite'
 import Cookies from './pages/Cookies'
 import MentionsLegales from './pages/MentionsLegales'
 import CGV from './pages/CGV'
+import Outils from './pages/Outils'
 
 function AppContent() {
   const location = useLocation()
@@ -93,6 +94,7 @@ function AppContent() {
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
           <Route path="/cgv" element={<CGV />} />
+          <Route path="/outils" element={<Outils />} />
         </Routes>
       </main>
       <Footer />
