@@ -94,6 +94,7 @@ const Home = () => {
       />
       <StructuredData type="Organization" />
       <StructuredData type="WebSite" />
+      <StructuredData type="LocalBusiness" />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-purple-50/20 to-blue-50/10 dark:from-dark-900 dark:via-dark-900 dark:to-dark-900 pt-48 pb-20">
