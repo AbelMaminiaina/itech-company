@@ -163,8 +163,8 @@ const Footer = () => {
           {/* Resources & Legal */}
           <div>
             <h3 className="text-white font-semibold text-lg mb-4">Ressources</h3>
-            <nav aria-label="Ressources">
-              <ul className="space-y-2 mb-6">
+            <nav aria-label="Ressources et informations légales">
+              <ul className="space-y-2">
                 {footerLinks.resources.map((link) => (
                   <li key={link.name}>
                     <Link
@@ -176,12 +176,6 @@ const Footer = () => {
                     </Link>
                   </li>
                 ))}
-              </ul>
-            </nav>
-
-            <h3 className="text-white font-semibold text-lg mb-4">Légal</h3>
-            <nav aria-label="Informations légales">
-              <ul className="space-y-2">
                 {footerLinks.legal.map((link) => (
                   <li key={link.name}>
                     <Link
