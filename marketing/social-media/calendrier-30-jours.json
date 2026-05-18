@@ -1,0 +1,179 @@
+{
+  "campaign": {
+    "name": "Lancement iTech-Company",
+    "duration": "30 jours",
+    "start_date": "2026-05-20",
+    "platforms": ["facebook", "linkedin", "tiktok"],
+    "website": "https://www.itech-company.com",
+    "contact_email": "contact@itech-company.com"
+  },
+  "schedule": {
+    "facebook": {
+      "posts_per_day": 1,
+      "best_times": ["09:00", "12:00", "18:00"],
+      "timezone": "Indian/Antananarivo"
+    },
+    "linkedin": {
+      "posts_per_day": 1,
+      "best_times": ["08:00", "12:00", "17:00"],
+      "timezone": "Indian/Antananarivo"
+    },
+    "tiktok": {
+      "posts_per_day": 1,
+      "best_times": ["12:00", "19:00", "21:00"],
+      "timezone": "Indian/Antananarivo"
+    }
+  },
+  "days": [
+    {
+      "day": 1,
+      "theme": "Lancement - Qui sommes-nous?",
+      "date": "2026-05-20"
+    },
+    {
+      "day": 2,
+      "theme": "Nos 5 services clés",
+      "date": "2026-05-21"
+    },
+    {
+      "day": 3,
+      "theme": "L'équipe iTech",
+      "date": "2026-05-22"
+    },
+    {
+      "day": 4,
+      "theme": "Témoignage client #1",
+      "date": "2026-05-23"
+    },
+    {
+      "day": 5,
+      "theme": "Pourquoi nous choisir",
+      "date": "2026-05-24"
+    },
+    {
+      "day": 6,
+      "theme": "Tendances tech 2026",
+      "date": "2026-05-25"
+    },
+    {
+      "day": 7,
+      "theme": "Récap semaine 1",
+      "date": "2026-05-26"
+    },
+    {
+      "day": 8,
+      "theme": "Focus: Développement Web",
+      "date": "2026-05-27"
+    },
+    {
+      "day": 9,
+      "theme": "Focus: Développement Mobile",
+      "date": "2026-05-28"
+    },
+    {
+      "day": 10,
+      "theme": "Focus: UI/UX Design",
+      "date": "2026-05-29"
+    },
+    {
+      "day": 11,
+      "theme": "Focus: DevOps & Cloud",
+      "date": "2026-05-30"
+    },
+    {
+      "day": 12,
+      "theme": "Focus: IA & Automatisation",
+      "date": "2026-05-31"
+    },
+    {
+      "day": 13,
+      "theme": "Success Story Client",
+      "date": "2026-06-01"
+    },
+    {
+      "day": 14,
+      "theme": "Récap semaine 2",
+      "date": "2026-06-02"
+    },
+    {
+      "day": 15,
+      "theme": "Tips: Erreurs site web",
+      "date": "2026-06-03"
+    },
+    {
+      "day": 16,
+      "theme": "Guide SEO basique",
+      "date": "2026-06-04"
+    },
+    {
+      "day": 17,
+      "theme": "Comment choisir une agence",
+      "date": "2026-06-05"
+    },
+    {
+      "day": 18,
+      "theme": "Témoignage client #2",
+      "date": "2026-06-06"
+    },
+    {
+      "day": 19,
+      "theme": "Sécurité web",
+      "date": "2026-06-07"
+    },
+    {
+      "day": 20,
+      "theme": "Culture d'entreprise",
+      "date": "2026-06-08"
+    },
+    {
+      "day": 21,
+      "theme": "Récap semaine 3",
+      "date": "2026-06-09"
+    },
+    {
+      "day": 22,
+      "theme": "Offre spéciale",
+      "date": "2026-06-10"
+    },
+    {
+      "day": 23,
+      "theme": "Notre stack technique",
+      "date": "2026-06-11"
+    },
+    {
+      "day": 24,
+      "theme": "Projets récents",
+      "date": "2026-06-12"
+    },
+    {
+      "day": 25,
+      "theme": "Témoignage client #3",
+      "date": "2026-06-13"
+    },
+    {
+      "day": 26,
+      "theme": "FAQ",
+      "date": "2026-06-14"
+    },
+    {
+      "day": 27,
+      "theme": "Best of du mois",
+      "date": "2026-06-15"
+    },
+    {
+      "day": 28,
+      "theme": "Vision future",
+      "date": "2026-06-16"
+    },
+    {
+      "day": 29,
+      "theme": "Communauté",
+      "date": "2026-06-17"
+    },
+    {
+      "day": 30,
+      "theme": "Bilan & Remerciements",
+      "date": "2026-06-18"
+    }
+  ]
+}
